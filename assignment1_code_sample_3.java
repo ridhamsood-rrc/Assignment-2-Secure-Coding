@@ -49,9 +49,11 @@ public class VulnerableApp {
         }
 
         return result.toString();
+
     }
 
     public static void saveToDb(String data) {
+        
         String query = "INSERT INTO mytable (column1, column2) VALUES ('" + data + "', 'Another Value')";
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              Statement stmt = conn.createStatement()) {
